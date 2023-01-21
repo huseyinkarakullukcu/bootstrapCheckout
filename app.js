@@ -43,6 +43,7 @@ rowProduct.addEventListener("click",(e)=>{
     }else if(e.target.parentNode.classList.contains("decrease")){
        input.value > 1 && input.value--    
     }else if(e.target.classList.contains("remove")){
+        e.preventDefault();
         const remove = e.target.closest("div").parentNode.parentNode
         remove.remove()        
     }
