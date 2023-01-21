@@ -13,14 +13,20 @@ function subTotals(){
     })
     //tax
     let tax = totals * 0.18
-
+    
     document.getElementById("tax").textContent = "$"+tax.toFixed(2)
     //sub total bottom
     let lastTotals = document.getElementById("totals")
     lastTotals.textContent = "$"+totals.toFixed(2)
-    let allTotal = totals + ship + tax
+    let allTotal = totals + tax + ship
     //All total
-    document.getElementById("allTotal").textContent = "$"+allTotal.toFixed(2)
+    if(totals === 0 ){
+        allTotal = 0
+        const noProduct = document.getElementById("noProduct").parentElement
+        const a = noProduct.classList.remove('d-none')
+        //console.log(a)
+    }
+    document.getElementById("allTotal").textContent = "$"+ allTotal.toFixed(2)
 }
 
 
